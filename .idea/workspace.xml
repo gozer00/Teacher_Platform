@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="b0cd50e8-694c-4500-a080-094fb32967ab" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/maven_wrapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BA_Backend/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BA_Backend/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BA_Backend/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BA_Backend/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BA_Backend/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BA_Backend/.idea/jpa-buddy.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BA_Backend/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BA_Backend/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BA_Backend/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BA_Backend/BA_Backend.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BA_Backend/target/classes/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BA_Backend/target/classes/com/example/bachelorarbeit/TeacherPlatformApplication.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BA_Backend/target/classes/com/example/bachelorarbeit/controllers/files/FileController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BA_Backend/target/classes/com/example/bachelorarbeit/controllers/lesson/CreatorController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BA_Backend/target/classes/com/example/bachelorarbeit/controllers/lesson/LessonBlockController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BA_Backend/target/classes/com/example/bachelorarbeit/controllers/lesson/LessonController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BA_Backend/target/classes/com/example/bachelorarbeit/controllers/user_management/AuthController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BA_Backend/target/classes/com/example/bachelorarbeit/controllers/user_management/TestController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BA_Backend/target/classes/com/example/bachelorarbeit/fileUpload/FileStorageException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BA_Backend/target/classes/com/example/bachelorarbeit/fileUpload/FileStorageProperties.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BA_Backend/target/classes/com/example/bachelorarbeit/fileUpload/FileStorageService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BA_Backend/target/classes/com/example/bachelorarbeit/fileUpload/MyFileNotFoundException.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BA_Backend/target/classes/com/example/bachelorarbeit/models/lesson/FileURI.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BA_Backend/target/classes/com/example/bachelorarbeit/models/lesson/Lesson.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BA_Backend/target/classes/com/example/bachelorarbeit/models/lesson/LessonBlock.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BA_Backend/target/classes/com/example/bachelorarbeit/models/lesson/MetaInformation.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BA_Backend/target/classes/com/example/bachelorarbeit/models/lesson/Phase.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BA_Backend/target/classes/com/example/bachelorarbeit/models/lesson/RawURI.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BA_Backend/target/classes/com/example/bachelorarbeit/models/user_management/ERole.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BA_Backend/target/classes/com/example/bachelorarbeit/models/user_management/Role.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BA_Backend/target/classes/com/example/bachelorarbeit/models/user_management/User.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BA_Backend/target/classes/com/example/bachelorarbeit/payload/request/LoginRequest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BA_Backend/target/classes/com/example/bachelorarbeit/payload/request/SaveLessonRequest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BA_Backend/target/classes/com/example/bachelorarbeit/payload/request/SignupRequest.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BA_Backend/target/classes/com/example/bachelorarbeit/payload/response/JwtResponse.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BA_Backend/target/classes/com/example/bachelorarbeit/payload/response/MessageResponse.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BA_Backend/target/classes/com/example/bachelorarbeit/payload/response/UploadFileResponse.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BA_Backend/target/classes/com/example/bachelorarbeit/repository/lesson/FileURIRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BA_Backend/target/classes/com/example/bachelorarbeit/repository/lesson/LessonRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BA_Backend/target/classes/com/example/bachelorarbeit/repository/lesson/MetaInformationRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BA_Backend/target/classes/com/example/bachelorarbeit/repository/lesson/PhasesRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BA_Backend/target/classes/com/example/bachelorarbeit/repository/user_management/RoleRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BA_Backend/target/classes/com/example/bachelorarbeit/repository/user_management/UserRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BA_Backend/target/classes/com/example/bachelorarbeit/security/WebSecurityConfig.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BA_Backend/target/classes/com/example/bachelorarbeit/security/jwt/AuthEntryPointJwt.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BA_Backend/target/classes/com/example/bachelorarbeit/security/jwt/AuthTokenFilter.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BA_Backend/target/classes/com/example/bachelorarbeit/security/jwt/JwtUtils.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BA_Backend/target/classes/com/example/bachelorarbeit/security/services/UserDetailsImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BA_Backend/target/classes/com/example/bachelorarbeit/security/services/UserDetailsServiceImpl.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BA_Frontend/.idea/BA_Frontend.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/BA_Frontend/BA_Frontend.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Teacher_Platform.iml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JpbToolWindowState">
+    <option name="myId2FirstActivated">
+      <map>
+        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
+      </map>
+    </option>
+    <option name="myId2Visible">
+      <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="false" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="false" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="false" />
+      </map>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2N0Opf7wqPPHcPhSf8E6Sg1K02X" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "openjdk-18",
+    "last_opened_file_path": "/home/erich/IdeaProjects/Teacher_Platform/BA_Frontend",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "project.propCompiler",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/BA_Backend/src" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager" selected="npm.start">
+    <configuration name="TeacherPlatformApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.example.bachelorarbeit.TeacherPlatformApplication" />
+      <module name="Teacher_Platform" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.example.bachelorarbeit.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TeacherPlatformApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="Bachelorarbeit" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.bachelorarbeit.TeacherPlatformApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/BA_Frontend/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="$USER_HOME$/.nvm/versions/node/v19.0.1/bin/node" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.start" />
+        <item itemvalue="Application.TeacherPlatformApplication" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b0cd50e8-694c-4500-a080-094fb32967ab" name="Changes" comment="" />
+      <created>1678797718529</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1678797718529</updated>
+      <workItem from="1678797720106" duration="2963000" />
+      <workItem from="1678801108792" duration="3084000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
