@@ -49,7 +49,6 @@ const ShowLessons = () => {
                                     <td> {les.metaInformation.grade}</td>
                                     <td>
                                         <button className="btn btn-primary" onClick={() => onShowLesson(les.lessonId)}>Ansehen</button>
-                                        <button className="btn btn-danger">Speichern</button>
                                     </td>
                                 </tr>
                         )

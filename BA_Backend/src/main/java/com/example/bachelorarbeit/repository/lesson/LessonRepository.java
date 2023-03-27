@@ -15,7 +15,7 @@ public interface LessonRepository extends JpaRepository<Lesson, Long> {
 
     Optional<Lesson> findByLessonId(Long id);
 
-    @Query("SELECT l FROM Lesson l WHERE " +
+    @Query("SELECT l FROM lessons l WHERE " +
             "(l.metaInformation.name LIKE CONCAT('%',:query, '%')" +
             "Or l.metaInformation.keywords LIKE CONCAT('%', :query, '%'))" +
             "And l.metaInformation.isPublic = TRUE")

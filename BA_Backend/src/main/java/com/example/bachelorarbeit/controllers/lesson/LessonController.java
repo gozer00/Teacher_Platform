@@ -17,8 +17,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Objects;
 
-@CrossOrigin(origins = "http://localhost:3000", maxAge = 3600)
 @RestController
+@CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping("/api/lessons")
 public class LessonController {
     @Autowired
@@ -31,27 +31,7 @@ public class LessonController {
 
     @PostMapping("/create")
     public ResponseEntity<?> createLesson(@RequestHeader (name="Authorization") String token, @RequestBody SaveLessonRequest request) {
-        System.out.println(new Gson().toJson(request));
-        MetaInformation metaInformation = new MetaInformation(
-                request.getName(),
-                request.getSubject(),
-                request.getGrade(),
-                request.getSchool(),
-                request.getState(),
-                request.getLessonThema(),
-                request.getMedia(),
-                request.getLessonType(),
-                request.getLearningGoals(),
-                request.getPreKnowledge(),
-                request.getResources(),
-                request.getKeywords(),
-                request.ispPublic()
-        );
-        Lesson lesson = new Lesson(metaInformation, createProcedurePlan(request.getProcedurePlan(), request.getFileURIs()));
-        lesson.setCreator(getUserFromToken(token));
-
-        lessonRepository.save(lesson);
-
+        saveLesson(request, token);
         return ResponseEntity.ok(new MessageResponse("Lesson saved successfully!"));
     }
 
@@ -79,11 +59,6 @@ public class LessonController {
     public Lesson getLesson(@PathVariable Long id) throws Exception {
         return lessonRepository.findByLessonId(id)
                 .orElseThrow(()->new Exception("Lesson doesn't exist"));
-    }
-
-    @GetMapping("/all")
-    public List<Lesson> getAllLessons() {  //todo: make error handling right
-        return lessonRepository.findAll();
     }
 
     @GetMapping("/search")
@@ -139,5 +114,27 @@ public class LessonController {
         String username = jwtUtils.getUserNameFromJwtToken(jwt);
         return userRepository.findByUsername(username)
                 .orElseThrow(() -> new UsernameNotFoundException("User Not Found with name: " + username));
+    }
+
+    private void saveLesson(SaveLessonRequest request, String token) {
+        MetaInformation metaInformation = new MetaInformation(
+                request.getName(),
+                request.getSubject(),
+                request.getGrade(),
+                request.getSchool(),
+                request.getState(),
+                request.getLessonThema(),
+                request.getMedia(),
+                request.getLessonType(),
+                request.getLearningGoals(),
+                request.getPreKnowledge(),
+                request.getResources(),
+                request.getKeywords(),
+                request.ispPublic()
+        );
+        Lesson lesson = new Lesson(metaInformation, createProcedurePlan(request.getProcedurePlan(), request.getFileURIs()));
+        lesson.setCreator(getUserFromToken(token));
+
+        lessonRepository.save(lesson);
     }
 }

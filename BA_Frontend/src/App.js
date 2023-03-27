@@ -26,17 +26,9 @@ function BoardAdmin() {
 }
 
 function App() {
-
-
-
-
-
     return (
         <div>
-
-
             <HeaderComponent/>
-
             <div className="container mt-3">
                 <Routes>
                     <Route path="/" element={<Home />} />
@@ -53,9 +45,7 @@ function App() {
                     <Route path="/test-upload" element={<FileUploadTestComponent/>}/>
                 </Routes>
             </div>
-
             <FooterComponent/>
-
         </div>
     );
 }

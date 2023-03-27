@@ -9,8 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
-@Entity
-@Table(name = "lessons")
+@Entity(name = "lessons")
 public class Lesson {
 
     public Lesson() {
