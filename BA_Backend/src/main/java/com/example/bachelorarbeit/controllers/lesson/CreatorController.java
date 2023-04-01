@@ -21,8 +21,8 @@ public class CreatorController {
     @Autowired
     private UserRepository userRepository;
 
-    @GetMapping("/my")
-    public User getLesson(@PathVariable Long id) throws Exception {
+    @GetMapping("/{id}")
+    public User getUser(@PathVariable Long id) throws Exception {
         //todo: check user authority
         return userRepository.findById(id)
                 .orElseThrow(()->new Exception("User doesn't exist"));
@@ -37,6 +37,7 @@ public class CreatorController {
                 .orElseThrow(() -> new Exception("User not found"));
         user.setUsername(request.getUserName());
         user.setEmail(request.getEmail());
+        userRepository.save(user);
         return ResponseEntity.ok(new MessageResponse("User saved successfully!"));
     }
 }

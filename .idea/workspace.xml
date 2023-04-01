@@ -5,17 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b0cd50e8-694c-4500-a080-094fb32967ab" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/BA_Backend/src/main/java/com/example/bachelorarbeit/payload/response/LessonMainInformation.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BA_Backend/src/main/java/com/example/bachelorarbeit/controllers/files/FileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/BA_Backend/src/main/java/com/example/bachelorarbeit/controllers/files/FileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BA_Backend/src/main/java/com/example/bachelorarbeit/controllers/lesson/LessonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/BA_Backend/src/main/java/com/example/bachelorarbeit/controllers/lesson/LessonController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BA_Backend/src/main/java/com/example/bachelorarbeit/models/lesson/Lesson.java" beforeDir="false" afterPath="$PROJECT_DIR$/BA_Backend/src/main/java/com/example/bachelorarbeit/models/lesson/Lesson.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BA_Backend/target/classes/com/example/bachelorarbeit/controllers/files/FileController.class" beforeDir="false" afterPath="$PROJECT_DIR$/BA_Backend/target/classes/com/example/bachelorarbeit/controllers/files/FileController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BA_Backend/target/classes/com/example/bachelorarbeit/controllers/lesson/LessonController.class" beforeDir="false" afterPath="$PROJECT_DIR$/BA_Backend/target/classes/com/example/bachelorarbeit/controllers/lesson/LessonController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BA_Backend/target/classes/com/example/bachelorarbeit/models/lesson/Lesson.class" beforeDir="false" afterPath="$PROJECT_DIR$/BA_Backend/target/classes/com/example/bachelorarbeit/models/lesson/Lesson.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BA_Frontend/src/components/SearchLesson.js" beforeDir="false" afterPath="$PROJECT_DIR$/BA_Frontend/src/components/SearchLesson.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BA_Frontend/src/components/ShowLesson.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/BA_Frontend/src/components/ShowLesson.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BA_Frontend/src/components/ShowLessons.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/BA_Frontend/src/components/ShowLessons.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BA_Backend/src/main/java/com/example/bachelorarbeit/controllers/lesson/CreatorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/BA_Backend/src/main/java/com/example/bachelorarbeit/controllers/lesson/CreatorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BA_Backend/target/classes/com/example/bachelorarbeit/controllers/lesson/CreatorController.class" beforeDir="false" afterPath="$PROJECT_DIR$/BA_Backend/target/classes/com/example/bachelorarbeit/controllers/lesson/CreatorController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BA_Frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/BA_Frontend/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BA_Frontend/src/components/ManagePersonalData.js" beforeDir="false" afterPath="$PROJECT_DIR$/BA_Frontend/src/components/ManagePersonalData.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BA_Frontend/src/services/user.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/BA_Frontend/src/services/user.service.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -190,7 +185,7 @@
       <workItem from="1680190812613" duration="197000" />
       <workItem from="1680265372160" duration="1219000" />
       <workItem from="1680269223346" duration="5988000" />
-      <workItem from="1680331731492" duration="12301000" />
+      <workItem from="1680331731492" duration="20258000" />
     </task>
     <task id="LOCAL-00001" summary="push project with correct structure to gitlab">
       <created>1678804344000</created>
@@ -220,7 +215,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680341654250</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="capsuled data for search lesson function and added back to previous page button">
+      <created>1680344797941</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1680344797941</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -232,7 +234,8 @@
     <MESSAGE value="removed LessonBlockController.java" />
     <MESSAGE value="push project to git" />
     <MESSAGE value="added Dockerfiles and fixed delete phases in lesson change" />
-    <option name="LAST_COMMIT_MESSAGE" value="added Dockerfiles and fixed delete phases in lesson change" />
+    <MESSAGE value="capsuled data for search lesson function and added back to previous page button" />
+    <option name="LAST_COMMIT_MESSAGE" value="capsuled data for search lesson function and added back to previous page button" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
