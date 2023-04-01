@@ -40,17 +40,9 @@ public class FileController {
 
         String fileDownloadUri = "http://localhost:8080/download-file/" + fileName;
 
-        System.err.println(fileDownloadUri);
 
         return new UploadFileResponse(fileName, fileDownloadUri,
                 file.getContentType(), file.getSize());
-    }
-
-    @PostMapping(value="/api/files/upload-multiple-files")
-    public List<UploadFileResponse> uploadMultipleFiles(@RequestParam("files") MultipartFile[] files) {
-        return Arrays.stream(files)
-                .map(this::uploadFile)
-                .collect(Collectors.toList());
     }
 
     @GetMapping("/download-file/{fileName:.+}")

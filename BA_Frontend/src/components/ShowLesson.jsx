@@ -1,9 +1,11 @@
 import React, {useEffect, useRef, useState} from "react";
-import {useLocation} from "react-router-dom";
+import {useLocation, useNavigate} from "react-router-dom";
 import {getLesson} from "../services/LessonService";
 import {downloadFile} from "../services/FileService";
+import {Button} from "react-bootstrap";
 
 const ShowLesson = () => {
+    const navigate = useNavigate();
     const location = useLocation();
     let requestId = location.state.id;
 
@@ -133,10 +135,10 @@ const ShowLesson = () => {
                             <td>{phase.teachingForm}</td>
                             <td>{phase.media}</td>
                             <td>
-                                <table className="table table-bordered">
+                                <table>
                                     <tbody>
                                         {phase.fileURIs.map((l, index2) =>
-                                            <tr key={index2}><td><button className="btn btn-light" onClick={() => handleDownloadLink(l.uri)}>{l.uri}</button></td></tr>
+                                            <tr key={index2}><td><button className="btn btn-light" onClick={() => handleDownloadLink(l.uri, l.uri.length)}>{l.uri.substring(l.uri.lastIndexOf("/")+1)}</button></td></tr>
                                         )}
                                     </tbody>
                                 </table>
@@ -146,6 +148,7 @@ const ShowLesson = () => {
                     </tbody>
                 </table>
             </div>
+            <Button className="btn btn-danger" onClick={()=> navigate(-1)}>Zurück</Button>
         </div>
     );
 }

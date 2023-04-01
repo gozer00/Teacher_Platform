@@ -3,6 +3,7 @@ package com.example.bachelorarbeit.controllers.lesson;
 import com.example.bachelorarbeit.models.lesson.*;
 import com.example.bachelorarbeit.models.user_management.User;
 import com.example.bachelorarbeit.payload.request.SaveLessonRequest;
+import com.example.bachelorarbeit.payload.response.LessonMainInformation;
 import com.example.bachelorarbeit.payload.response.MessageResponse;
 import com.example.bachelorarbeit.repository.lesson.LessonRepository;
 import com.example.bachelorarbeit.repository.lesson.PhaseRepository;
@@ -66,8 +67,16 @@ public class LessonController {
     }
 
     @GetMapping("/search")
-    public List<Lesson> searchLesson(@RequestParam String query) {
-        return lessonRepository.searchLesson(query);
+    public List<LessonMainInformation> searchLesson(@RequestParam String query) {
+        List<Lesson> result = lessonRepository.searchLesson(query);
+        ArrayList<LessonMainInformation> mainInformation = new ArrayList<>();
+        for (Lesson l:result) {
+            mainInformation.add(new LessonMainInformation(l.getLessonId(),
+                    l.getMetaInformation().getName(),
+                    l.getMetaInformation().getSubject(),
+                    l.getMetaInformation().getGrade()));
+        }
+        return mainInformation;
     }
 
     @PutMapping("/update")

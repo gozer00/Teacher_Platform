@@ -45,9 +45,9 @@ const ShowLessons = () => {
                             (les, index) =>
                                 <tr key={index}>
                                     <td> {les.lessonId} </td>
-                                    <td> {les.metaInformation.name}</td>
-                                    <td> {les.metaInformation.subject}</td>
-                                    <td> {les.metaInformation.grade}</td>
+                                    <td> {les.name}</td>
+                                    <td> {les.subject}</td>
+                                    <td> {les.grade}</td>
                                     <td>
                                         <button className="btn btn-primary" onClick={() => onShowLesson(les.lessonId)}>Ansehen</button>
                                     </td>

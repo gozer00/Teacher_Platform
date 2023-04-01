@@ -1,5 +1,6 @@
 import {useNavigate} from "react-router-dom";
 import React, {useState} from "react";
+import Form from "react-validation/build/form";
 
 const Home = () => {
     let navigate = useNavigate();
@@ -20,13 +21,15 @@ const Home = () => {
         <div className="container">
             <header className="jumbotron">
                 <h3>Suchen</h3>
-                <input
-                    name='media'
-                    type="text"
-                    className="form-control"
-                    onChange={event => onChange(event)}
-                />
-                <button className="btn btn-primary" onClick={onClick}> Suchen </button>
+                <Form onSubmit={onClick}>
+                    <input
+                        name='media'
+                        type="text"
+                        className="form-control"
+                        onChange={event => onChange(event)}
+                    />
+                    <button className="btn btn-primary" onClick={onClick}> Suchen </button>
+                </Form>
             </header>
         </div>
     );
