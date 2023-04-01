@@ -36,7 +36,7 @@ function App() {
                     <Route path="/login" element={<Login />} />
                     <Route path="/register" element={<Register />} />
                     <Route path="/profile" element={<PersonalArea />} />
-                    <Route path="/create-lesson" element={<CreateLesson />} />
+                    <Route path="/create-lesson" element={<UpdateLesson />} />
                     <Route path="/search" element={<SearchLesson />} />
                     <Route path="/show-lessons" element={<ShowLessons/>} />
                     <Route path="/manage-lessons" element={<ManageLessons/>} />

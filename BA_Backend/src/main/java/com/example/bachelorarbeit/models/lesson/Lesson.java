@@ -47,6 +47,9 @@ public class Lesson {
 
     public void setProcedurePlan(List<Phase> procedurePlan) {
         this.procedurePlan = procedurePlan;
+        for (Phase p:procedurePlan) {
+            System.err.println(p.getName());
+        }
         updatePhases(procedurePlan);
     }
 

@@ -1,7 +1,6 @@
 package com.example.bachelorarbeit.models.lesson;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 import java.util.ArrayList;
@@ -13,7 +12,7 @@ public class Phase {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "phase_id", nullable = false)
-    private Long phase_id;
+    private Long phaseId;
     @ManyToOne
     @JoinColumn(name="lesson_id")
     @JsonBackReference
@@ -38,12 +37,12 @@ public class Phase {
         this.number = number;
     }
 
-    public Long getPhase_id() {
-        return phase_id;
+    public Long getPhaseId() {
+        return phaseId;
     }
 
-    public void setPhase_id(Long phase_id) {
-        this.phase_id = phase_id;
+    public void setPhaseId(Long phaseId) {
+        this.phaseId = phaseId;
     }
 
     public String getName() {

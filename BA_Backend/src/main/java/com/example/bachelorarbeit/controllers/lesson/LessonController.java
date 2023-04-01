@@ -5,6 +5,7 @@ import com.example.bachelorarbeit.models.user_management.User;
 import com.example.bachelorarbeit.payload.request.SaveLessonRequest;
 import com.example.bachelorarbeit.payload.response.MessageResponse;
 import com.example.bachelorarbeit.repository.lesson.LessonRepository;
+import com.example.bachelorarbeit.repository.lesson.PhaseRepository;
 import com.example.bachelorarbeit.repository.user_management.UserRepository;
 import com.example.bachelorarbeit.security.jwt.AuthTokenFilter;
 import com.example.bachelorarbeit.security.jwt.JwtUtils;
@@ -14,6 +15,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -28,6 +30,8 @@ public class LessonController {
 
     @Autowired
     private JwtUtils jwtUtils;
+    @Autowired
+    private PhaseRepository phaseRepository;
 
     @PostMapping("/create")
     public ResponseEntity<?> createLesson(@RequestHeader (name="Authorization") String token, @RequestBody SaveLessonRequest request) {
@@ -87,12 +91,23 @@ public class LessonController {
             meta.setResources(request.getResources());
             meta.setKeywords(request.getKeywords());
             meta.setPublic(request.ispPublic());
+            handleDeletedPhases(request.getProcedurePlan(), lesson);
             lesson.setProcedurePlan(createProcedurePlan(request.getProcedurePlan(), request.getFileURIs()));
             lessonRepository.save(lesson);
         } else {
             return ResponseEntity.ok(new MessageResponse("Lesson not saved!"));
         }
         return ResponseEntity.ok(new MessageResponse("Lesson saved successfully!"));
+    }
+
+    private void handleDeletedPhases(List<Phase> procedurePlan, Lesson lesson){
+        ArrayList<Long> phaseIds = new ArrayList<>();
+        for (Phase p:procedurePlan) {
+            if(p.getPhaseId() != null) {
+                phaseIds.add(p.getPhaseId());
+            }
+        }
+        phaseRepository.deleteRemovedPhases(phaseIds, lesson);
     }
 
     @DeleteMapping("/delete/{id}")

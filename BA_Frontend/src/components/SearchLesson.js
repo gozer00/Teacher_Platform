@@ -19,7 +19,7 @@ const Home = () => {
     return (
         <div className="container">
             <header className="jumbotron">
-                <h3>search</h3>
+                <h3>Suchen</h3>
                 <input
                     name='media'
                     type="text"

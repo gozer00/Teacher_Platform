@@ -14,6 +14,7 @@ const ShowLessons = () => {
 
     useEffect(() => {
         searchLessons(query).then((res) => {
+            console.log(res);
             setLessons(res.data);
         });
     }, []);

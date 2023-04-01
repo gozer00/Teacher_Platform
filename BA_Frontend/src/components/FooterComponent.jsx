@@ -13,7 +13,7 @@ class FooterComponent extends Component {
             <div>
                 <footer className="text-center text-lg-start bg-light text-muted">
                     <div className="text-center p-4">
-                        All Rights Reserved 2022 @eg
+                        Bachelorarbeit von Erich Gozebina: Web-Plattform zum Erstellen und Teilen von Unterrichtseinheiten
                     </div>
                 </footer>
             </div>

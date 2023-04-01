@@ -58,7 +58,7 @@ const HeaderComponent = () => {
             <nav className="navbar navbar-expand navbar-dark bg-dark">
                 <div className="navbar-nav mr-auto">
                     <button className="btn btn-primary nb" onClick={onHome}>
-                        Teacher Platform
+                        Start
                     </button>
                 </div>
 

@@ -8,7 +8,7 @@ export const getLesson=(id) => {
 }
 
 export const searchLessons = (query) => {
-    return axios.get(TEACHER_PLATFORM_API_BASE_URL+"/search?query="+query, { headers: authHeader() });
+    return axios.get(TEACHER_PLATFORM_API_BASE_URL+"/search?query="+query);
 }
 
 export const getMyLessons=() => {

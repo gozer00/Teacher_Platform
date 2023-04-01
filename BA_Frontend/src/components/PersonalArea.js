@@ -11,7 +11,7 @@ const PersonalArea = () => {
     }
 
     const handleCreateLesson = () => {
-        navigate("/update-lesson", {state: {id: -1}})
+        navigate("/create-lesson", {state: {id: -1}})
     }
 
     const handleManageLessons = () => {
