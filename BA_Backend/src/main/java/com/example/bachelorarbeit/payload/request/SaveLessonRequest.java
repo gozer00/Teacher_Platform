@@ -28,6 +28,29 @@ public class SaveLessonRequest {
 
     private Long lessonId;
 
+    public SaveLessonRequest(String name, String subject, int grade, String school, String state, String lessonThema, String media, String lessonType, String learningGoals, String preKnowledge, String resources, String keywords, boolean pPublic, List<Phase> procedurePlan, List<RawURI> fileURIs, Long userId, Long lessonId) {
+        this.name = name;
+        this.subject = subject;
+        this.grade = grade;
+        this.school = school;
+        this.state = state;
+        this.lessonThema = lessonThema;
+        this.media = media;
+        this.lessonType = lessonType;
+        this.learningGoals = learningGoals;
+        this.preKnowledge = preKnowledge;
+        this.resources = resources;
+        this.keywords = keywords;
+        this.pPublic = pPublic;
+        this.procedurePlan = procedurePlan;
+        this.fileURIs = fileURIs;
+        this.userId = userId;
+        this.lessonId = lessonId;
+    }
+
+    public SaveLessonRequest() {
+    }
+
     public String getName() {
         return name;
     }

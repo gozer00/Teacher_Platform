@@ -24,7 +24,7 @@ RUN ./mvnw package -DskipTests
 RUN mkdir -p target/dependency && (cd target/dependency; jar -xf ../*.jar)
 
 #### Stage 2: A minimal docker image with command to run the app
-FROM openjdk:18
+FROM openjdk:17
 
 ARG DEPENDENCY=/app/target/dependency
 

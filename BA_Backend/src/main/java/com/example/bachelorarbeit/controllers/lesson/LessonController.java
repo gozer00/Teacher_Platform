@@ -56,7 +56,7 @@ public class LessonController {
     }
 
     @GetMapping("/my")
-    public List<Lesson> getMyLessons(@RequestHeader (name="Authorization") String token) {  //todo: make error handling right
+    public List<Lesson> getMyLessons(@RequestHeader (name="Authorization") String token) {
         return lessonRepository.findByCreator(getUserFromToken(token));
     }
 
@@ -104,7 +104,7 @@ public class LessonController {
             lesson.setProcedurePlan(createProcedurePlan(request.getProcedurePlan(), request.getFileURIs()));
             lessonRepository.save(lesson);
         } else {
-            return ResponseEntity.ok(new MessageResponse("Lesson not saved!"));
+            return ResponseEntity.badRequest().body(new MessageResponse("Lesson not saved!"));
         }
         return ResponseEntity.ok(new MessageResponse("Lesson saved successfully!"));
     }
@@ -121,6 +121,7 @@ public class LessonController {
 
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> deleteLesson(@PathVariable Long id) throws Exception {
+        // TODO: 05.04.23 authority check
         Lesson lesson = lessonRepository.findByLessonId(id)
                 .orElseThrow(()->new Exception("Lesson doesn't exist"));
         lessonRepository.delete(lesson);

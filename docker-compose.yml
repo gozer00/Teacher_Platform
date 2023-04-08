@@ -11,7 +11,7 @@ services:
       context: BA_Backend # Use an image built from the specified dockerfile in the `polling-app-server` directory.
       dockerfile: Dockerfile
     ports:
-      - "8080:8081" # Forward the exposed port 8080 on the container to port 8080 on the host machine
+      - "8080:8080" # Forward the exposed port 8080 on the container to port 8080 on the host machine
     restart: always
     depends_on:
       - db # This service depends on mysql. Start that first.
@@ -31,7 +31,7 @@ services:
       args:
         REACT_APP_API_BASE_URL: http://127.0.0.1:8080/api
     ports:
-      - "9090:80" # Map the exposed port 80 on the container to port 9090 on the host machine
+      - "3000:3000" # Map the exposed port 3000 on the container to port 9090 on the host machine
     restart: always
     depends_on:
       - app-server

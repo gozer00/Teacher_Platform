@@ -17,6 +17,7 @@ export const getMyLessons=() => {
 
 export const createLesson=(lesson) => {
     console.log(lesson)
+    console.log(authHeader())
     return axios.post(TEACHER_PLATFORM_API_BASE_URL+"/create", lesson, { headers: authHeader() });
 }
 

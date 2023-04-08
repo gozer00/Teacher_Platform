@@ -34,6 +34,6 @@ COPY --from=build /app/build /var/www
 
 # Expose port 80 to the Docker host, so we can access it
 # from the outside.
-EXPOSE 80
+EXPOSE 3000
 
 ENTRYPOINT ["nginx","-g","daemon off;"]
