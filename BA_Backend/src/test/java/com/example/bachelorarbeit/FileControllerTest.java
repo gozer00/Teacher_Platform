@@ -42,13 +42,20 @@ public class FileControllerTest {
                 .build();
     }
 
+    /**
+     * Test method for successful file upload
+     * @throws Exception
+     */
     @Test
     public void testUploadFile() throws Exception {
+        // test file
         MockMultipartFile file = new MockMultipartFile("file", "test.txt",
                 "text/plain", "Test data".getBytes());
 
+        // mock answer
         when(fileStorageService.storeFile(file)).thenReturn("test.txt");
 
+        // execution
         mockMvc.perform(MockMvcRequestBuilders.multipart("/api/files/upload-file")
                         .file(file))
                 .andExpect(status().isOk())
@@ -58,10 +65,16 @@ public class FileControllerTest {
                 .andExpect(jsonPath("$.size").value("9"));
     }
 
+    /**
+     * Test method for successful file download
+     * @throws Exception
+     */
     @Test
     public void testDownloadFile() throws Exception {
+        // setup
         Resource resource = new ByteArrayResource("Test data".getBytes());
 
+        // mock answer
         when(fileStorageService.loadFileAsResource("test.txt")).thenReturn(resource);
 
         mockMvc.perform(MockMvcRequestBuilders.get("/download-file/test.txt"))
@@ -72,23 +85,31 @@ public class FileControllerTest {
                 .andExpect(content().bytes("Test data".getBytes()));
     }
 
+    /**
+     * Test method for successful file delete
+     * @throws Exception
+     */
     @Test
     public void testDeleteFile() throws Exception {
+        // setup values
         String fileName = "test.txt";
         String fileUri = "http://localhost:8080/download-file/" + fileName;
 
+        // mock delete method and return true
         when(fileStorageService.delete(fileUri)).thenReturn(true);
 
         mockMvc.perform(MockMvcRequestBuilders.delete("/delete-file/" + fileName))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.message").value("Delete the file successfully: " + fileUri));
 
+        // mock delete method and return false
         when(fileStorageService.delete(fileUri)).thenReturn(false);
 
         mockMvc.perform(MockMvcRequestBuilders.delete("/delete-file/" + fileName))
                 .andExpect(status().isNotFound())
                 .andExpect(jsonPath("$.message").value("The file does not exist!"));
 
+        // mock delete method and test exception
         when(fileStorageService.delete(fileUri)).thenThrow(new IOException("Error deleting file"));
 
         mockMvc.perform(MockMvcRequestBuilders.delete("/delete-file/" + fileName))

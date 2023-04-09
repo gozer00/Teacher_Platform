@@ -48,30 +48,52 @@ public class LessonControllerTest {
     public void init() {
         MockitoAnnotations.initMocks(this);
     }
+
+    /**
+     * Test method for delete lesson.
+     * @throws Exception
+     */
     @Test
     public void testDeleteLesson() throws Exception {
+        // create Lesson object
         Long id = 1L;
         Lesson lesson = new Lesson();
         lesson.setLessonId(id);
         when(lessonRepository.findByLessonId(id)).thenReturn(Optional.of(lesson));
+
+        // load answer
         ResponseEntity<?> responseEntity = lessonController.deleteLesson(id);
+
+        // verification
         assertEquals(responseEntity.getStatusCode(), HttpStatus.OK);
         assertEquals(responseEntity.getBody(), "Deleted successfully");
     }
+
+    /**
+     * Test method for delete lesson when lesson was not found
+     * @throws Exception
+     */
     @Test
     public void testDeleteLesson_whenLessonNotFound() throws Exception {
+        // setup
         Long id = 1L;
         when(lessonRepository.findByLessonId(id)).thenReturn(Optional.empty());
         Exception exception = assertThrows(Exception.class, () -> {
             lessonController.deleteLesson(id);
         });
+
+        // compare
         String expectedMessage = "Lesson doesn't exist";
         String actualMessage = exception.getMessage();
         assertEquals(actualMessage, expectedMessage);
     }
 
+    /**
+     * Test method for searchLesson function
+     */
     @Test
     public void testSearchLesson() {
+        // save two lessons and mock the result
         String query = "mathe";
         List<Lesson> mockResult = new ArrayList<>();
         MetaInformation metaInformation1 = new MetaInformation();
@@ -91,7 +113,11 @@ public class LessonControllerTest {
         mockResult.add(lesson1);
         mockResult.add(lesson2);
         when(lessonRepository.searchLesson(query)).thenReturn(mockResult);
+
+        // execute endpoint access
         List<LessonMainInformation> result = lessonController.searchLesson(query);
+
+        // verification
         assertEquals(result.size(), 2);
         assertEquals(result.get(0).getLessonId(), lesson1.getLessonId());
         assertEquals(result.get(0).getName(), lesson1.getMetaInformation().getName());
@@ -103,6 +129,10 @@ public class LessonControllerTest {
         assertEquals(result.get(1).getGrade(), lesson2.getMetaInformation().getGrade());
     }
 
+    /**
+     * Test method for getLesson
+     * @throws Exception
+     */
     @Test
     public void testGetLesson() throws Exception {
         Long lessonId = 1L;
@@ -112,6 +142,10 @@ public class LessonControllerTest {
         Lesson result = lessonController.getLesson(lessonId);
         assertEquals(result.getLessonId(), lessonId);
     }
+
+    /**
+     * Test method for getLesson and Lesson not found
+     */
     @Test
     public void testGetLessonLessonNotFound() {
         Long lessonId = 1L;
@@ -122,6 +156,9 @@ public class LessonControllerTest {
         assertEquals(exception.getMessage(), "Lesson doesn't exist");
     }
 
+    /**
+     * Test method for creation of a new Lesson
+     */
     @Test
     public void testCreateLesson() {
         User user = new User();
@@ -143,6 +180,9 @@ public class LessonControllerTest {
         assertEquals("Lesson saved successfully!", ((MessageResponse)responseEntity.getBody()).getMessage());
     }
 
+    /**
+     * Test method for getMyLessons
+     */
     @Test
     public void testGetMyLessons() {
         User user1 = new User();

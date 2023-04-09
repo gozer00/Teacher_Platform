@@ -79,14 +79,19 @@ public class AuthControllerTest {
         userRepository.deleteAll();
     }
 
+    /**
+     * Test method for login with valid credentials
+     */
     @Test
     public void testSignInValidCredentials() throws Exception {
+        // setup
         String username = "testuser";
         String email = "mail";
         String password = "testpassword";
         User user = new User(username, email, password);
         userRepository.save(user);
 
+        //execute
         LoginRequest loginRequest = new LoginRequest(username, password);
 
         MvcResult result = mockMvc.perform(post(AUTHENTICATION_ENDPOINT)
@@ -95,20 +100,27 @@ public class AuthControllerTest {
                 .andExpect(status().isOk())
                 .andReturn();
 
+        // verify
         JwtResponse jwtResponse = gson.fromJson(result.getResponse().getContentAsString(), JwtResponse.class);
         String jwt = jwtResponse.getAccessToken();
         String userName = jwtUtils.getUserNameFromJwtToken(jwt);
-        assertEquals(userName, userName);
+        assertEquals(userName, username);
     }
 
+    /**
+     * Test method for login with invalid credentials
+     * @throws Exception
+     */
     @Test
     public void testSignInInvalidCredentials() throws Exception {
+        //setup
         String username = "testuser";
         String email = "mail";
         String password = "testpassword";
         User user = new User(username, email, password);
         userRepository.save(user);
 
+        //execute
         LoginRequest loginRequest = new LoginRequest(username, "invalidpassword");
 
         mockMvc.perform(post(AUTHENTICATION_ENDPOINT)
@@ -117,19 +129,26 @@ public class AuthControllerTest {
                 .andExpect(status().isUnauthorized());
     }
 
+    /**
+     * Test method for registration with valid credentials
+     * @throws Exception
+     */
     @Test
     public void testSignUpValidCredentials() throws Exception {
+        // setup
         SignupRequest signupRequest = new SignupRequest();
         signupRequest.setUsername("testuser");
         signupRequest.setEmail("testuser@example.com");
         signupRequest.setPassword("testpassword");
         signupRequest.setRole(Collections.singleton("user"));
 
+        // execute
         mockMvc.perform(post(REGISTRATION_ENDPOINT)
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(gson.toJson(signupRequest)))
                 .andExpect(status().isOk());
 
+        // verification
         User user = userRepository.findByUsername("testuser").get();
         assertEquals("testuser@example.com", user.getEmail());
         assertTrue(passwordEncoder.matches("testpassword", user.getPassword()));
@@ -137,9 +156,13 @@ public class AuthControllerTest {
         assertTrue(user.getRoles().stream().anyMatch(role -> role.getName() == ERole.ROLE_USER));
     }
 
+    /**
+     * Test user registration with username that is already used.
+     * @throws Exception
+     */
     @Test
     public void testSignUpDuplicateUsername() throws Exception {
-        // given
+        // setup
         String username = "testuser";
         String email = "mail";
         String password = "testpassword";
@@ -152,6 +175,7 @@ public class AuthControllerTest {
         signupRequest.setPassword("testpassword2");
         signupRequest.setRole(Collections.singleton("user"));
 
+        // execution
         mockMvc.perform(post(REGISTRATION_ENDPOINT)
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(gson.toJson(signupRequest)))

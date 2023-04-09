@@ -61,9 +61,14 @@ public class LessonControllerUpdateLessonTest {
         mockMvc = MockMvcBuilders.standaloneSetup(lessonController).build();
     }
 
+
+    /**
+     * Test method for updating a lesson.
+     * @throws Exception
+     */
     @Test
     public void testUpdateLesson() throws Exception {
-        // Mocking the request body
+        // setup the request body
         SaveLessonRequest request = new SaveLessonRequest();
         request.setLessonId(1L);
         request.setName("Lesson");
@@ -86,16 +91,18 @@ public class LessonControllerUpdateLessonTest {
         List<RawURI> uris = new ArrayList<>();
         request.setFileURIs(uris);
 
+        // mock user
         User user = new User();
         when(userRepository.findByUsername(null)).thenReturn(Optional.of(user));
 
-
+        // create lesson
         Lesson lesson = new Lesson();
         lesson.setLessonId(1L);
         lesson.setCreator(user);
         lesson.setMetaInformation(new MetaInformation());
         when(lessonRepository.findByLessonId(1L)).thenReturn(Optional.of(lesson));
 
+        // execute endpoint access
         mockMvc.perform(put("/update")
                         .header("Authorization", "Bearer ")
                         .contentType(MediaType.APPLICATION_JSON)
@@ -103,6 +110,7 @@ public class LessonControllerUpdateLessonTest {
                 .andExpect(status().isOk())
                 .andExpect((ResultMatcher) jsonPath("$.message").value("Lesson saved successfully!"));
 
+        // verification
         verify(lessonRepository).findByLessonId(1L);
         verify(lessonRepository).save(lesson);
         verify(phaseRepository).deleteRemovedPhases(Arrays.asList(1L, 2L), lesson);

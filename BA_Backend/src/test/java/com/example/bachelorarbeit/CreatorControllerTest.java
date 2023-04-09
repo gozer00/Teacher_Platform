@@ -30,6 +30,10 @@ public class CreatorControllerTest {
     @InjectMocks
     private CreatorController creatorController;
 
+    /**
+     * Test method for getting user from database
+     * @throws Exception
+     */
     @Test
     public void testGetUser() throws Exception {
         // Setup
@@ -45,6 +49,10 @@ public class CreatorControllerTest {
         Assert.assertEquals(user, result);
     }
 
+    /**
+     * Test method with user not found
+     * @throws Exception
+     */
     @Test(expected = Exception.class)
     public void testGetUserNotFound() throws Exception {
         // Setup
@@ -57,6 +65,7 @@ public class CreatorControllerTest {
 
     @Test
     public void testUpdateUser() throws Exception {
+        // start values
         String token = "token";
         Long userId = 1L;
         User user = new User();
@@ -69,15 +78,22 @@ public class CreatorControllerTest {
         request.setUserName("new name");
         request.setEmail("new email");
 
+        // call updateUser function
         ResponseEntity<?> response = creatorController.updateUser(token, request);
 
+        // verification
         Assert.assertEquals(HttpStatus.OK, response.getStatusCode());
         Assert.assertEquals("User saved successfully!", ((MessageResponse) response.getBody()).getMessage());
         Mockito.verify(userRepository, Mockito.times(1)).save(user);
     }
 
+    /**
+     * Test method testing a ChangeUserRequest with not authorized user
+     * @throws Exception
+     */
     @Test
     public void testUpdateUserNotAuthorized() throws Exception {
+        // start values
         String token = "dummy token";
         Long userId = 1L;
         User user = new User();
@@ -89,15 +105,22 @@ public class CreatorControllerTest {
         request.setUserName("new name");
         request.setEmail("new email");
 
+        // load response
         ResponseEntity<?> response = creatorController.updateUser(token, request);
 
+        // verification
         Assert.assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
         Assert.assertEquals("User not saved!", ((MessageResponse) response.getBody()).getMessage());
         Mockito.verify(userRepository, Mockito.never()).save(user);
     }
 
+    /**
+     * Test method for updating lessons. Test case: wrong user
+     * @throws Exception
+     */
     @Test(expected = Exception.class)
     public void testUpdateUserNotFound() throws Exception {
+        // setup
         String token = "token";
         Long userId = 1L;
         Mockito.when(jwtUtils.getUserNameFromJwtToken(Mockito.anyString())).thenReturn("username");
