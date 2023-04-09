@@ -27,18 +27,33 @@ public class CreatorController {
     @Autowired
     private JwtUtils jwtUtils;
 
+    /**
+     * Endpoint for getting user.
+     * @param id id of the user
+     * @return User object
+     * @throws Exception if user doesn't exist
+     */
     @GetMapping("/{id}")
     public User getUser(@PathVariable Long id) throws Exception {
         return userRepository.findById(id)
                 .orElseThrow(()->new Exception("User doesn't exist"));
     }
 
+    /**
+     * Endpoint for updating user details.
+     * @param token JWT
+     * @param request ChangeUserRequest
+     * @return ResponseEntity containing success or error message
+     * @throws Exception if user with id doesn't exist
+     */
     @PutMapping("/update")
     public ResponseEntity<?> updateUser(@RequestHeader (name="Authorization") String token,
                                           @RequestBody ChangeUserRequest request) throws Exception {
-        if (Objects.equals(request.getUserId(), getUserFromToken(token).getUser_id())) {
+        if (Objects.equals(request.getUserId(), jwtUtils.getUserFromToken(token).getUser_id())) { // Check authority
+            // Load User from database
             User user = userRepository.findById(request.getUserId())
                     .orElseThrow(() -> new Exception("User not found"));
+            // Write new values
             user.setUsername(request.getUserName());
             user.setEmail(request.getEmail());
             userRepository.save(user);
@@ -46,17 +61,5 @@ public class CreatorController {
         } else {
             return ResponseEntity.badRequest().body(new MessageResponse("User not saved!"));
         }
-    }
-
-    /**
-     * This method extracts the user from a JWT. When user doesn't exist, it throws UsernameNotFound exception.
-     * @param token JWT as String (usually retrieved from HTTP header)
-     * @return User object when exists in the database
-     */
-    private User getUserFromToken(String token) {
-        String jwt = AuthTokenFilter.parseJwt(token);
-        String username = jwtUtils.getUserNameFromJwtToken(jwt);
-        return userRepository.findByUsername(username)
-                .orElseThrow(() -> new UsernameNotFoundException("User Not Found with name: " + username));
     }
 }

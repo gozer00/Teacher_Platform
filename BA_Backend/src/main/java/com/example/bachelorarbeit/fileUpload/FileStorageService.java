@@ -38,6 +38,11 @@ public class FileStorageService {
         }
     }
 
+    /**
+     * Service method that stores a file into filesystem of the server
+     * @param file MultipartFile
+     * @return String filename
+     */
     public String storeFile(MultipartFile file) {
         // Normalize file name
         String fileName = StringUtils.cleanPath(file.getOriginalFilename());
@@ -58,8 +63,14 @@ public class FileStorageService {
         }
     }
 
+    /**
+     * Service method that loads the file from the filesystem
+     * @param fileName name of the requested file
+     * @return Resource object
+     */
     public Resource loadFileAsResource(String fileName) {
         try {
+            // load resource
             Path filePath = this.fileStorageLocation.resolve(fileName).normalize();
             Resource resource = new ByteArrayResource(Files.readAllBytes(filePath));
             if(resource.exists()) {
@@ -74,11 +85,16 @@ public class FileStorageService {
         }
     }
 
+    /**
+     * Service method that deletes the file.
+     * @param filename name of the file to delete
+     * @return Boolean success
+     */
     public boolean delete(String filename) {
         try {
             Path file = fileStorageLocation.resolve(filename.substring(filename.lastIndexOf("/")+1));
             System.out.println(file);
-            //todo: exception handling
+            // delete from database
             FileURI uri = fileURIRepository.findFileURIByUri(filename);
             fileURIRepository.delete(uri);
 

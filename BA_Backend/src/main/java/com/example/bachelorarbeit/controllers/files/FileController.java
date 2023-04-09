@@ -29,22 +29,27 @@ public class FileController {
     @Autowired
     private FileStorageService fileStorageService;
 
+    /**
+     * Endpoint for uploading files.
+     * @param file the uploaded file
+     * @return UploadFileResponse containting the URI for download
+     */
     @PostMapping(value="/api/files/upload-file", consumes = { MediaType.MULTIPART_FORM_DATA_VALUE })
     public UploadFileResponse uploadFile(@RequestParam("file") MultipartFile file) {
         String fileName = fileStorageService.storeFile(file);
-
-        /*String fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
-                .path("/download-file/")
-                .path(fileName)
-                .toUriString();*/
-
         String fileDownloadUri = "http://localhost:8080/download-file/" + fileName;
-
 
         return new UploadFileResponse(fileName, fileDownloadUri,
                 file.getContentType(), file.getSize());
     }
 
+    /**
+     * Endpoint for downloading files.
+     * @param fileName name of the file
+     * @param request request
+     * @return ResponseEntity containing the file
+     * @throws IOException if file wasn't found
+     */
     @GetMapping("/download-file/{fileName:.+}")
     public ResponseEntity<Resource> downloadFile(@PathVariable String fileName, HttpServletRequest request) throws IOException {
         // Load file as Resource
@@ -70,21 +75,28 @@ public class FileController {
                 .body(resource);
     }
 
+    /**
+     * Endpoint for deleting files.
+     * @param name file name
+     * @return ResponseEntity containing success or error message
+     */
     @DeleteMapping("/delete-file/{name:.+}")
     @ResponseBody
     public ResponseEntity<?> deleteFile(@PathVariable String name) {
         String message = "";
+        // Load file name
         String fileuri = "http://localhost:8080/download-file/" + name;
-        System.err.println(fileuri);
         try {
+            // Try to delete file
             boolean existed = fileStorageService.delete(fileuri);
 
-            System.err.println("deleted=" + existed);
             if (existed) {
+                // Send success message
                 message = "Delete the file successfully: " + fileuri;
                 return ResponseEntity.status(HttpStatus.OK).body(new MessageResponse(message));
             }
 
+            // Send failure message
             message = "The file does not exist!";
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new MessageResponse(message));
         } catch (Exception e) {
