@@ -1,9 +1,23 @@
 # Docker Compose file Reference (https://docs.docker.com/compose/compose-file/)
 
-version: '3.7'
+version: '3.8'
 
 # Define services
 services:
+  # Database Service (Mysql)
+  db:
+    image: mysql:8.0.32
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_DATABASE: 'teacher_platform_db'
+      MYSQL_USER: 'test'
+      MYSQL_PASSWORD: 'test'
+      MYSQL_ROOT_PASSWORD: 'password'
+    volumes:
+      - db-data:/var/lib/mysql
+    networks:
+      - backend
   # App backend service
   app-server:
     # Configuration for building the docker image for the backend service
@@ -12,13 +26,11 @@ services:
       dockerfile: Dockerfile
     ports:
       - "8080:8080" # Forward the exposed port 8080 on the container to port 8080 on the host machine
-    restart: always
     depends_on:
       - db # This service depends on mysql. Start that first.
     environment: # Pass environment variables to the service
-      SPRING_DATASOURCE_URL: jdbc:mysql://localhost:3307/teacher_platform_db?allowPublicKeyRetrieval=true&useSSL=false
-      SPRING_DATASOURCE_USERNAME: test
-      SPRING_DATASOURCE_PASSWORD: test
+      SPRING_DATASOURCE_URL: jdbc:mysql://db:3306/teacher_platform_db?allowPublicKeyRetrieval=true&useSSL=false
+
     networks: # Networks to join (Services on the same network can communicate with each other using their name)
       - backend
       - frontend
@@ -30,29 +42,17 @@ services:
       dockerfile: Dockerfile
       args:
         REACT_APP_API_BASE_URL: http://127.0.0.1:8080/api
+    stdin_open: true
     ports:
       - "3000:3000" # Map the exposed port 3000 on the container to port 9090 on the host machine
-    restart: always
     depends_on:
       - app-server
+    volumes:
+      - "./:/app"
+      - "./:/node_modules"
     networks:
       - frontend
 
-  # Database Service (Mysql)
-  db:
-    image: mysql:8.0.32
-    ports:
-      - "3307:3307"
-    restart: always
-    environment:
-      MYSQL_DATABASE: teacher_platform_db
-      MYSQL_USER: root
-      MYSQL_PASSWORD:
-      MYSQL_ROOT_PASSWORD:
-    volumes:
-      - db-data:/var/lib/mysql
-    networks:
-      - backend
 
 # Volumes
 volumes:
