@@ -42,14 +42,12 @@ services:
       dockerfile: Dockerfile
       args:
         REACT_APP_API_BASE_URL: http://127.0.0.1:8080/api
-    stdin_open: true
+    #stdin_open: true
+    #tty: true
     ports:
       - "3000:3000" # Map the exposed port 3000 on the container to port 9090 on the host machine
     depends_on:
       - app-server
-    volumes:
-      - "./:/app"
-      - "./:/node_modules"
     networks:
       - frontend
 
