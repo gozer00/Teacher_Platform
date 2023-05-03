@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b0cd50e8-694c-4500-a080-094fb32967ab" name="Changes" comment="docker file">
-      <change afterPath="$PROJECT_DIR$/BA_Frontend/.dockerignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BA_Backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/BA_Backend/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BA_Frontend/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/BA_Frontend/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
     </list>
@@ -84,23 +84,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.start">
-    <configuration name="LessonControllerTest.testCreateLesson" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Bachelorarbeit" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.bachelorarbeit.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.example.bachelorarbeit" />
-      <option name="MAIN_CLASS_NAME" value="com.example.bachelorarbeit.LessonControllerTest" />
-      <option name="METHOD_NAME" value="testCreateLesson" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Docker.docker-compose.yml: Compose Deployment">
     <configuration name="LessonControllerTest.testDeleteLesson" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Bachelorarbeit" />
       <extension name="coverage">
@@ -124,10 +108,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="BA_Frontend/Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
+      <deployment type="dockerfile">
+        <settings>
+          <option name="buildOnly" value="true" />
+          <option name="sourceFilePath" value="BA_Frontend/Dockerfile" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
       <deployment type="docker-compose.yml">
         <settings />
       </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
+      <deployment type="dockerfile" />
       <method v="2" />
     </configuration>
     <configuration name="docker-compose.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
@@ -160,11 +157,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
+        <item itemvalue="Docker.BA_Frontend/Dockerfile" />
         <item itemvalue="npm.start" />
         <item itemvalue="npm.build" />
-        <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
         <item itemvalue="JUnit.LessonControllerTest.testDeleteLesson" />
-        <item itemvalue="JUnit.LessonControllerTest.testCreateLesson" />
       </list>
     </recent_temporary>
   </component>
@@ -197,7 +194,7 @@
       <workItem from="1682853924342" duration="417000" />
       <workItem from="1682854823052" duration="11954000" />
       <workItem from="1683044276723" duration="2093000" />
-      <workItem from="1683121412168" duration="1016000" />
+      <workItem from="1683121412168" duration="4413000" />
     </task>
     <task id="LOCAL-00001" summary="push project with correct structure to gitlab">
       <created>1678804344000</created>
@@ -269,7 +266,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683042795228</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="docker file">
+      <created>1683122569109</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1683122569109</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -1,22 +1,22 @@
 #### Stage 1: Build the react application
-#FROM node:19-alpine as builder
+FROM node:19-alpine as builder
 
 
-#WORKDIR /app
+WORKDIR /app
 
 # Copy the package.json as well as the package-lock.json and install
 # the dependencies. This is a separate step so the dependencies
 # will be cached unless changes to one of those two files
 # are made.
-#COPY package.json package-lock.json ./
-#RUN npm install
+COPY package.json package-lock.json ./
+RUN npm install
 
 # Copy the main application
-#COPY . ./
+COPY . ./
 
-#EXPOSE 3000
+EXPOSE 3000
 
-#CMD ["npm", "start"]
+CMD ["npm", "start"]
 
 #COPY package.json .
 #RUN yarn install
