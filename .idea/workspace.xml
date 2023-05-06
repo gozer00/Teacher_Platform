@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b0cd50e8-694c-4500-a080-094fb32967ab" name="Changes" comment="docker file">
+    <list default="true" id="b0cd50e8-694c-4500-a080-094fb32967ab" name="Changes" comment="docker runs">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BA_Backend/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/BA_Backend/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BA_Frontend/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/BA_Frontend/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +123,9 @@
       <method v="2" />
     </configuration>
     <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
-      <deployment type="dockerfile" />
+      <deployment type="dockerfile">
+        <settings />
+      </deployment>
       <method v="2" />
     </configuration>
     <configuration name="docker-compose.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
@@ -194,7 +195,8 @@
       <workItem from="1682853924342" duration="417000" />
       <workItem from="1682854823052" duration="11954000" />
       <workItem from="1683044276723" duration="2093000" />
-      <workItem from="1683121412168" duration="4413000" />
+      <workItem from="1683121412168" duration="5197000" />
+      <workItem from="1683395605051" duration="783000" />
     </task>
     <task id="LOCAL-00001" summary="push project with correct structure to gitlab">
       <created>1678804344000</created>
@@ -273,7 +275,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683122569109</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="docker runs">
+      <created>1683126096215</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1683126096215</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -304,7 +313,8 @@
     <MESSAGE value="comments: added meaningful comments" />
     <MESSAGE value="comments: added comments to unit tests" />
     <MESSAGE value="docker file" />
-    <option name="LAST_COMMIT_MESSAGE" value="docker file" />
+    <MESSAGE value="docker runs" />
+    <option name="LAST_COMMIT_MESSAGE" value="docker runs" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

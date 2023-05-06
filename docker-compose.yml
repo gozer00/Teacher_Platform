@@ -45,7 +45,7 @@ services:
     #stdin_open: true
     #tty: true
     ports:
-      - "3000:3000" # Map the exposed port 3000 on the container to port 9090 on the host machine
+      - "3000:3000" # Map the exposed port 3000 on the container to port 3000 on the host machine
     depends_on:
       - app-server
     volumes:
