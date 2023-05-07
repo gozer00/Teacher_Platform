@@ -20,4 +20,6 @@ public interface LessonRepository extends JpaRepository<Lesson, Long> {
             "Or l.metaInformation.keywords LIKE CONCAT('%', :query, '%'))" +
             "And l.metaInformation.isPublic = TRUE")
     List<Lesson> searchLesson(String query);
+
+    void deleteAllByCreator_User_id(Long id);
 }

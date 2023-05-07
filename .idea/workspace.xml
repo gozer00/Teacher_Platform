@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b0cd50e8-694c-4500-a080-094fb32967ab" name="Changes" comment="docker runs">
+    <list default="true" id="b0cd50e8-694c-4500-a080-094fb32967ab" name="Changes" comment="docker and readme for starting with docker">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BA_Backend/src/main/java/com/example/bachelorarbeit/controllers/lesson/CreatorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/BA_Backend/src/main/java/com/example/bachelorarbeit/controllers/lesson/CreatorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BA_Backend/src/main/java/com/example/bachelorarbeit/repository/lesson/LessonRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/BA_Backend/src/main/java/com/example/bachelorarbeit/repository/lesson/LessonRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BA_Backend/src/main/java/com/example/bachelorarbeit/repository/user_management/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/BA_Backend/src/main/java/com/example/bachelorarbeit/repository/user_management/UserRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -196,7 +197,8 @@
       <workItem from="1682854823052" duration="11954000" />
       <workItem from="1683044276723" duration="2093000" />
       <workItem from="1683121412168" duration="5197000" />
-      <workItem from="1683395605051" duration="783000" />
+      <workItem from="1683395605051" duration="1410000" />
+      <workItem from="1683460778730" duration="602000" />
     </task>
     <task id="LOCAL-00001" summary="push project with correct structure to gitlab">
       <created>1678804344000</created>
@@ -282,7 +284,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683126096215</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="docker and readme for starting with docker">
+      <created>1683396408968</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1683396408968</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -314,7 +323,8 @@
     <MESSAGE value="comments: added comments to unit tests" />
     <MESSAGE value="docker file" />
     <MESSAGE value="docker runs" />
-    <option name="LAST_COMMIT_MESSAGE" value="docker runs" />
+    <MESSAGE value="docker and readme for starting with docker" />
+    <option name="LAST_COMMIT_MESSAGE" value="docker and readme for starting with docker" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -6,6 +6,7 @@ import com.example.bachelorarbeit.models.user_management.User;
 import com.example.bachelorarbeit.payload.request.ChangeUserRequest;
 import com.example.bachelorarbeit.payload.request.SaveLessonRequest;
 import com.example.bachelorarbeit.payload.response.MessageResponse;
+import com.example.bachelorarbeit.repository.lesson.LessonRepository;
 import com.example.bachelorarbeit.repository.user_management.UserRepository;
 import com.example.bachelorarbeit.security.jwt.AuthTokenFilter;
 import com.example.bachelorarbeit.security.jwt.JwtUtils;
@@ -23,6 +24,9 @@ import java.util.Objects;
 public class CreatorController {
     @Autowired
     private UserRepository userRepository;
+
+    @Autowired
+    private LessonRepository lessonRepository;
 
     @Autowired
     private JwtUtils jwtUtils;
@@ -60,6 +64,19 @@ public class CreatorController {
             return ResponseEntity.ok(new MessageResponse("User saved successfully!"));
         } else {
             return ResponseEntity.badRequest().body(new MessageResponse("User not saved!"));
+        }
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<?> deleteUser(@RequestHeader (name="Authorization") String token,
+                                        @PathVariable Long id) throws Exception {
+        if (Objects.equals(id, jwtUtils.getUserFromToken(token).getUser_id())) { // Check authority
+            // Load User from database
+            userRepository.deleteByUser_id(id);
+            lessonRepository.deleteAllByCreator_User_id(id);
+            return ResponseEntity.ok(new MessageResponse("User and lessons deleted successfully!"));
+        } else {
+            return ResponseEntity.badRequest().body(new MessageResponse("User not deleted!"));
         }
     }
 }
