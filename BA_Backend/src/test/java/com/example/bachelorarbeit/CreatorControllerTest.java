@@ -39,7 +39,7 @@ public class CreatorControllerTest {
         // Setup
         Long id = 1L;
         User user = new User();
-        user.setUser_id(id);
+        user.setId(id);
         Mockito.when(userRepository.findById(id)).thenReturn(Optional.of(user));
 
         // Test
@@ -69,7 +69,7 @@ public class CreatorControllerTest {
         String token = "token";
         Long userId = 1L;
         User user = new User();
-        user.setUser_id(userId);
+        user.setId(userId);
         Mockito.when(userRepository.findById(userId)).thenReturn(Optional.of(user));
         Mockito.when(jwtUtils.getUserNameFromJwtToken(Mockito.anyString())).thenReturn(user.getUsername());
 
@@ -97,7 +97,7 @@ public class CreatorControllerTest {
         String token = "dummy token";
         Long userId = 1L;
         User user = new User();
-        user.setUser_id(userId);
+        user.setId(userId);
         Mockito.when(jwtUtils.getUserNameFromJwtToken(Mockito.anyString())).thenReturn(user.getUsername());
 
         ChangeUserRequest request = new ChangeUserRequest();

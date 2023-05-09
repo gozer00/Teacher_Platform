@@ -1,19 +1,14 @@
 package com.example.bachelorarbeit.controllers.lesson;
 
 import com.example.bachelorarbeit.models.lesson.*;
-import com.example.bachelorarbeit.models.user_management.User;
 import com.example.bachelorarbeit.payload.request.SaveLessonRequest;
 import com.example.bachelorarbeit.payload.response.LessonMainInformation;
 import com.example.bachelorarbeit.payload.response.MessageResponse;
 import com.example.bachelorarbeit.repository.lesson.LessonRepository;
 import com.example.bachelorarbeit.repository.lesson.PhaseRepository;
-import com.example.bachelorarbeit.repository.user_management.UserRepository;
-import com.example.bachelorarbeit.security.jwt.AuthTokenFilter;
 import com.example.bachelorarbeit.security.jwt.JwtUtils;
-import com.google.gson.Gson;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -123,7 +118,7 @@ public class LessonController {
                 .orElseThrow(() -> new Exception("Lesson not found"));
 
         // Update all values
-        if(Objects.equals(lesson.getCreator().getUser_id(), jwtUtils.getUserFromToken(token).getUser_id())) {
+        if(Objects.equals(lesson.getCreator().getId(), jwtUtils.getUserFromToken(token).getId())) {
             MetaInformation meta = lesson.getMetaInformation();
             meta.setName(request.getName());
             meta.setSubject(request.getSubject());

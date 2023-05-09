@@ -1,19 +1,13 @@
 package com.example.bachelorarbeit.controllers.lesson;
 
-import com.example.bachelorarbeit.models.lesson.Lesson;
-import com.example.bachelorarbeit.models.lesson.MetaInformation;
 import com.example.bachelorarbeit.models.user_management.User;
 import com.example.bachelorarbeit.payload.request.ChangeUserRequest;
-import com.example.bachelorarbeit.payload.request.SaveLessonRequest;
 import com.example.bachelorarbeit.payload.response.MessageResponse;
 import com.example.bachelorarbeit.repository.lesson.LessonRepository;
 import com.example.bachelorarbeit.repository.user_management.UserRepository;
-import com.example.bachelorarbeit.security.jwt.AuthTokenFilter;
 import com.example.bachelorarbeit.security.jwt.JwtUtils;
-import com.google.gson.Gson;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Objects;
@@ -53,7 +47,7 @@ public class CreatorController {
     @PutMapping("/update")
     public ResponseEntity<?> updateUser(@RequestHeader (name="Authorization") String token,
                                           @RequestBody ChangeUserRequest request) throws Exception {
-        if (Objects.equals(request.getUserId(), jwtUtils.getUserFromToken(token).getUser_id())) { // Check authority
+        if (Objects.equals(request.getUserId(), jwtUtils.getUserFromToken(token).getId())) { // Check authority
             // Load User from database
             User user = userRepository.findById(request.getUserId())
                     .orElseThrow(() -> new Exception("User not found"));
@@ -69,11 +63,12 @@ public class CreatorController {
 
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> deleteUser(@RequestHeader (name="Authorization") String token,
-                                        @PathVariable Long id) throws Exception {
-        if (Objects.equals(id, jwtUtils.getUserFromToken(token).getUser_id())) { // Check authority
-            // Load User from database
-            userRepository.deleteByUser_id(id);
-            lessonRepository.deleteAllByCreator_User_id(id);
+                                        @PathVariable Long id) {
+        if (Objects.equals(id, jwtUtils.getUserFromToken(token).getId())) { // Check authority
+            System.err.println("delete");
+            // delete user and lessons
+            userRepository.deleteById(id);
+            lessonRepository.deleteByCreator_Id(id);
             return ResponseEntity.ok(new MessageResponse("User and lessons deleted successfully!"));
         } else {
             return ResponseEntity.badRequest().body(new MessageResponse("User not deleted!"));

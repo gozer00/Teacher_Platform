@@ -19,9 +19,9 @@ import java.util.Set;
         })
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @JsonIgnore
-    private Long user_id;
+    private Long id;
 
     @NotBlank
     @Length(max = 20)
@@ -58,12 +58,12 @@ public class User {
         this.password = password;
     }
 
-    public Long getUser_id() {
-        return user_id;
+    public Long getId() {
+        return id;
     }
 
-    public void setUser_id(Long id) {
-        this.user_id = id;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getUsername() {

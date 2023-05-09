@@ -28,6 +28,10 @@ export const getUser = (id) => {
     return axios.get(CHANGE_API_URL +id, {headers: authHeader()});
 }
 
+export const deleteUser = (id) => {
+    return axios.delete(CHANGE_API_URL+"delete/"+id, {headers: authHeader()});
+}
+
 export default {
     getPublicContent,
     getUserBoard,

@@ -3,12 +3,11 @@ import Input from "react-validation/build/input";
 import React, {useCallback, useEffect, useState} from "react";
 import Form from "react-validation/build/form";
 import {useDispatch, useSelector, useStore} from "react-redux";
-import {updateUser, getUser} from "../services/user.service";
+import {updateUser, getUser, deleteUser} from "../services/user.service";
 import {useNavigate} from "react-router-dom";
 import {logout} from "../actions/auth";
 
 const ManagePersonalData = () => {
-
     const navigate = useNavigate();
 
     const { user: currentUser } = useSelector((state) => state.auth);
@@ -43,7 +42,13 @@ const ManagePersonalData = () => {
             updateUser(update);
             dispatch(logout());
             navigate("/login");
-        };
+    };
+
+    const handleDelete = () => {
+        deleteUser(currentUser.id).then(() => {
+            logout();
+        });
+    }
 
     return (
         <div className="col-md-12">
@@ -74,6 +79,9 @@ const ManagePersonalData = () => {
                     <div className="form-group">
                         <button className="btn btn-primary" onClick={handleSave}>
                             <span>Speichern und ausloggen</span>
+                        </button>
+                        <button className="btn btn-danger" onClick={handleDelete}>
+                            <span>Account löschen</span>
                         </button>
                     </div>
                 </Form>

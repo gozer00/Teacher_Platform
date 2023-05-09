@@ -4,11 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b0cd50e8-694c-4500-a080-094fb32967ab" name="Changes" comment="docker and readme for starting with docker">
+    <list default="true" id="b0cd50e8-694c-4500-a080-094fb32967ab" name="Changes" comment="feat: delete user and lessons created by user">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BA_Backend/src/main/java/com/example/bachelorarbeit/controllers/lesson/CreatorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/BA_Backend/src/main/java/com/example/bachelorarbeit/controllers/lesson/CreatorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BA_Backend/src/main/java/com/example/bachelorarbeit/controllers/lesson/LessonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/BA_Backend/src/main/java/com/example/bachelorarbeit/controllers/lesson/LessonController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BA_Backend/src/main/java/com/example/bachelorarbeit/models/user_management/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/BA_Backend/src/main/java/com/example/bachelorarbeit/models/user_management/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BA_Backend/src/main/java/com/example/bachelorarbeit/repository/lesson/LessonRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/BA_Backend/src/main/java/com/example/bachelorarbeit/repository/lesson/LessonRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BA_Backend/src/main/java/com/example/bachelorarbeit/repository/user_management/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/BA_Backend/src/main/java/com/example/bachelorarbeit/repository/user_management/UserRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BA_Backend/src/main/java/com/example/bachelorarbeit/security/services/UserDetailsImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/BA_Backend/src/main/java/com/example/bachelorarbeit/security/services/UserDetailsImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BA_Backend/src/test/java/com/example/bachelorarbeit/CreatorControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/BA_Backend/src/test/java/com/example/bachelorarbeit/CreatorControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BA_Backend/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/BA_Backend/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BA_Backend/target/classes/com/example/bachelorarbeit/controllers/lesson/CreatorController.class" beforeDir="false" afterPath="$PROJECT_DIR$/BA_Backend/target/classes/com/example/bachelorarbeit/controllers/lesson/CreatorController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BA_Backend/target/classes/com/example/bachelorarbeit/repository/lesson/LessonRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/BA_Backend/target/classes/com/example/bachelorarbeit/repository/lesson/LessonRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BA_Backend/target/classes/com/example/bachelorarbeit/repository/user_management/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/BA_Backend/target/classes/com/example/bachelorarbeit/repository/user_management/UserRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BA_Frontend/src/components/ManagePersonalData.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/BA_Frontend/src/components/ManagePersonalData.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BA_Frontend/src/services/user.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/BA_Frontend/src/services/user.service.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +94,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Docker.docker-compose.yml: Compose Deployment">
+  <component name="RunManager" selected="Spring Boot.TeacherPlatformApplication">
     <configuration name="LessonControllerTest.testDeleteLesson" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Bachelorarbeit" />
       <extension name="coverage">
@@ -159,9 +169,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.start" />
         <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
         <item itemvalue="Docker.BA_Frontend/Dockerfile" />
-        <item itemvalue="npm.start" />
         <item itemvalue="npm.build" />
         <item itemvalue="JUnit.LessonControllerTest.testDeleteLesson" />
       </list>
@@ -198,7 +208,7 @@
       <workItem from="1683044276723" duration="2093000" />
       <workItem from="1683121412168" duration="5197000" />
       <workItem from="1683395605051" duration="1410000" />
-      <workItem from="1683460778730" duration="602000" />
+      <workItem from="1683460778730" duration="4896000" />
     </task>
     <task id="LOCAL-00001" summary="push project with correct structure to gitlab">
       <created>1678804344000</created>
@@ -291,7 +301,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683396408968</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="feat: delete user and lessons created by user">
+      <created>1683461405023</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1683461405023</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -324,7 +341,8 @@
     <MESSAGE value="docker file" />
     <MESSAGE value="docker runs" />
     <MESSAGE value="docker and readme for starting with docker" />
-    <option name="LAST_COMMIT_MESSAGE" value="docker and readme for starting with docker" />
+    <MESSAGE value="feat: delete user and lessons created by user" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: delete user and lessons created by user" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

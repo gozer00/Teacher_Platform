@@ -21,5 +21,5 @@ public interface LessonRepository extends JpaRepository<Lesson, Long> {
             "And l.metaInformation.isPublic = TRUE")
     List<Lesson> searchLesson(String query);
 
-    void deleteAllByCreator_User_id(Long id);
+    void deleteByCreator_Id(Long id);
 }
