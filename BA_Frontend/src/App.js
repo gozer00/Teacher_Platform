@@ -1,14 +1,11 @@
-import logo from './logo.svg';
 import './App.css';
-import React, {useCallback, useEffect, useState} from 'react';
-import {Link, Route, Routes} from 'react-router-dom';
+import {Route, Routes} from 'react-router-dom';
 import HeaderComponent from "./components/HeaderComponent";
 import FooterComponent from "./components/FooterComponent";
 import Home from "./components/Home";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import PersonalArea from "./components/PersonalArea";
-import CreateLesson from "./components/CreateLesson";
 import SearchLesson from "./components/SearchLesson";
 import ShowLessons from "./components/ShowLessons";
 import ManageLessons from "./components/ManageLessons";
@@ -16,15 +13,6 @@ import UpdateLesson from "./components/UpdateLesson";
 import ShowLesson from "./components/ShowLesson";
 import FileUploadTestComponent from "./components/FileUploadTestComponent";
 import ManagePersonalData from "./components/ManagePersonalData";
-
-
-function BoardModerator() {
-    return null;
-}
-
-function BoardAdmin() {
-    return null;
-}
 
 function App() {
     return (

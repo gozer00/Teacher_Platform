@@ -5,7 +5,6 @@ import Input from "react-validation/build/input";
 import Form from "react-validation/build/form";
 import {createLesson, getLesson, updateLesson} from "../services/LessonService";
 import {deleteFile, uploadFile} from "../services/FileService";
-import equals from "validator/es/lib/equals";
 
 const UpdateLesson = () => {
     const { user: currentUser } = useSelector((state) => state.auth);
@@ -156,17 +155,13 @@ const UpdateLesson = () => {
             temp = temp.filter(f => f.phase !== index)
             Array.from(event.target.files).forEach((file) => {
                 temp = [...temp, {"phase": index, "file":file}]
-                //console.log(file);
-                //setPhaseFiles([...phaseFiles, {"phase": index, "file":file}]);
             })
             setPhaseFiles(temp);
-            //console.log(data[index][event.target.name])
         } else {
             let data = [...phaseFields];
             data[index][event.target.name] = event.target.value;
             setPhaseFields(data);
         }
-        //console.log("new value: " + data[index][event.target.name])
         console.log(phaseFiles)
     }
 

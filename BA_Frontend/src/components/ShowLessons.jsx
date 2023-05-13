@@ -1,7 +1,6 @@
 import {useEffect, useState} from "react";
 import {deleteLesson, getMyLessons, searchLessons} from "../services/LessonService";
 import {useLocation, useNavigate} from "react-router-dom";
-import Accordion from "react-bootstrap/Accordion";
 
 const ShowLessons = () => {
 

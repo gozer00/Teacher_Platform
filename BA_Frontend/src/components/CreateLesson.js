@@ -127,22 +127,17 @@ const CreateLesson = () => {
     const handlePhaseChange = (index, event) => {
         let data = [...phaseFields];
         console.log("Change in " + event.target.name + "\n old value: " + data[index][event.target.name]);
-        //todo: case for file upload
         if (event.target.name === "files") {
             console.log(event.target.files);
             let temp = phaseFiles
             temp = temp.filter(f => f.phase != index)
             Array.from(event.target.files).forEach((file) => {
                 temp = [...temp, {"phase": index, "file":file}]
-                //console.log(file);
-                //setPhaseFiles([...phaseFiles, {"phase": index, "file":file}]);
             })
             setPhaseFiles(temp);
-            //console.log(data[index][event.target.name])
         } else {
             data[index][event.target.name] = event.target.value;
         }
-        //console.log("new value: " + data[index][event.target.name])
         console.log(phaseFiles)
         setPhaseFields(data);
     }

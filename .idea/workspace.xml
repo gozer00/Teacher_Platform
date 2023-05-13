@@ -6,19 +6,25 @@
   <component name="ChangeListManager">
     <list default="true" id="b0cd50e8-694c-4500-a080-094fb32967ab" name="Changes" comment="feat: delete user and lessons created by user">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BA_Backend/src/main/java/com/example/bachelorarbeit/controllers/lesson/CreatorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/BA_Backend/src/main/java/com/example/bachelorarbeit/controllers/lesson/CreatorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BA_Backend/src/main/java/com/example/bachelorarbeit/controllers/lesson/LessonController.java" beforeDir="false" afterPath="$PROJECT_DIR$/BA_Backend/src/main/java/com/example/bachelorarbeit/controllers/lesson/LessonController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BA_Backend/src/main/java/com/example/bachelorarbeit/models/user_management/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/BA_Backend/src/main/java/com/example/bachelorarbeit/models/user_management/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BA_Backend/src/main/java/com/example/bachelorarbeit/repository/lesson/LessonRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/BA_Backend/src/main/java/com/example/bachelorarbeit/repository/lesson/LessonRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BA_Backend/src/main/java/com/example/bachelorarbeit/repository/user_management/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/BA_Backend/src/main/java/com/example/bachelorarbeit/repository/user_management/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BA_Backend/src/main/java/com/example/bachelorarbeit/security/services/UserDetailsImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/BA_Backend/src/main/java/com/example/bachelorarbeit/security/services/UserDetailsImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BA_Backend/src/test/java/com/example/bachelorarbeit/CreatorControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/BA_Backend/src/test/java/com/example/bachelorarbeit/CreatorControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BA_Backend/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/BA_Backend/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BA_Backend/target/classes/com/example/bachelorarbeit/controllers/lesson/CreatorController.class" beforeDir="false" afterPath="$PROJECT_DIR$/BA_Backend/target/classes/com/example/bachelorarbeit/controllers/lesson/CreatorController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BA_Backend/target/classes/com/example/bachelorarbeit/repository/lesson/LessonRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/BA_Backend/target/classes/com/example/bachelorarbeit/repository/lesson/LessonRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BA_Backend/target/classes/com/example/bachelorarbeit/repository/user_management/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/BA_Backend/target/classes/com/example/bachelorarbeit/repository/user_management/UserRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BA_Backend/target/classes/com/example/bachelorarbeit/controllers/lesson/LessonController.class" beforeDir="false" afterPath="$PROJECT_DIR$/BA_Backend/target/classes/com/example/bachelorarbeit/controllers/lesson/LessonController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BA_Backend/target/classes/com/example/bachelorarbeit/models/user_management/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/BA_Backend/target/classes/com/example/bachelorarbeit/models/user_management/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BA_Backend/target/classes/com/example/bachelorarbeit/security/services/UserDetailsImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/BA_Backend/target/classes/com/example/bachelorarbeit/security/services/UserDetailsImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BA_Frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/BA_Frontend/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BA_Frontend/src/actions/types.js" beforeDir="false" afterPath="$PROJECT_DIR$/BA_Frontend/src/actions/types.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BA_Frontend/src/components/CreateLesson.js" beforeDir="false" afterPath="$PROJECT_DIR$/BA_Frontend/src/components/CreateLesson.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BA_Frontend/src/components/FileUploadTestComponent.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BA_Frontend/src/components/FooterComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/BA_Frontend/src/components/FooterComponent.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BA_Frontend/src/components/HeaderComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/BA_Frontend/src/components/HeaderComponent.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BA_Frontend/src/components/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/BA_Frontend/src/components/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BA_Frontend/src/components/LessonTableRow.jsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/BA_Frontend/src/components/ManagePersonalData.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/BA_Frontend/src/components/ManagePersonalData.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BA_Frontend/src/services/user.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/BA_Frontend/src/services/user.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BA_Frontend/src/components/PersonalArea.js" beforeDir="false" afterPath="$PROJECT_DIR$/BA_Frontend/src/components/PersonalArea.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BA_Frontend/src/components/PhaseComponent.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BA_Frontend/src/components/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/BA_Frontend/src/components/Register.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BA_Frontend/src/components/ShowLesson.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/BA_Frontend/src/components/ShowLesson.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BA_Frontend/src/components/ShowLessons.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/BA_Frontend/src/components/ShowLessons.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/BA_Frontend/src/components/ShowLessonsNew.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/BA_Frontend/src/components/UpdateLesson.js" beforeDir="false" afterPath="$PROJECT_DIR$/BA_Frontend/src/components/UpdateLesson.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -209,6 +215,7 @@
       <workItem from="1683121412168" duration="5197000" />
       <workItem from="1683395605051" duration="1410000" />
       <workItem from="1683460778730" duration="4896000" />
+      <workItem from="1683971374929" duration="1915000" />
     </task>
     <task id="LOCAL-00001" summary="push project with correct structure to gitlab">
       <created>1678804344000</created>

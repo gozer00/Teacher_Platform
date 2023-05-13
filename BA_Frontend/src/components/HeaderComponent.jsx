@@ -1,15 +1,13 @@
-import React, {Component, useCallback, useEffect, useState} from 'react';
-import {Link, useLocation, useNavigate} from "react-router-dom";
+import React, {useCallback, useEffect} from 'react';
+import {useLocation, useNavigate} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {clearMessage} from "../actions/message";
 import {logout} from "../actions/auth";
 
 const HeaderComponent = () => {
     let navigate = useNavigate();
-    const [showAdminBoard, setShowAdminBoard] = useState(false);
 
     const { user: currentUser } = useSelector((state) => state.auth);
-    // eslint-disable-next-line react-hooks/rules-of-hooks
     const dispatch = useDispatch();
 
     let location = useLocation();

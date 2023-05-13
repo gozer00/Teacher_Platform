@@ -21,8 +21,6 @@ const ShowLesson = () => {
     const [preKnowledge, setPreKnowledge] = useState("");
     const [resources, setResources] = useState("");
     const [keywords, setKeywords] = useState("");
-    const [isPublic, setIsPublic] = useState(false);
-    const [lessonId, setLessonId] = useState(-1)
 
     const [phaseFields, setPhaseFields] = useState([]);
 

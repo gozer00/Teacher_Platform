@@ -1,6 +1,5 @@
-import Login from "./Login";
 import Input from "react-validation/build/input";
-import React, {useCallback, useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import Form from "react-validation/build/form";
 import {useDispatch, useSelector, useStore} from "react-redux";
 import {updateUser, getUser, deleteUser} from "../services/user.service";
@@ -12,9 +11,6 @@ const ManagePersonalData = () => {
 
     const { user: currentUser } = useSelector((state) => state.auth);
     const dispatch = useDispatch();
-
-
-
     const [username, setUsername] = useState();
     const [email, setEmail] = useState();
 
