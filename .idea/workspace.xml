@@ -4,27 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b0cd50e8-694c-4500-a080-094fb32967ab" name="Changes" comment="feat: delete user and lessons created by user">
+    <list default="true" id="b0cd50e8-694c-4500-a080-094fb32967ab" name="Changes" comment="removed unnecessary comments">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BA_Backend/target/classes/com/example/bachelorarbeit/controllers/lesson/LessonController.class" beforeDir="false" afterPath="$PROJECT_DIR$/BA_Backend/target/classes/com/example/bachelorarbeit/controllers/lesson/LessonController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BA_Backend/target/classes/com/example/bachelorarbeit/models/user_management/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/BA_Backend/target/classes/com/example/bachelorarbeit/models/user_management/User.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BA_Backend/target/classes/com/example/bachelorarbeit/security/services/UserDetailsImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/BA_Backend/target/classes/com/example/bachelorarbeit/security/services/UserDetailsImpl.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BA_Frontend/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/BA_Frontend/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BA_Frontend/src/actions/types.js" beforeDir="false" afterPath="$PROJECT_DIR$/BA_Frontend/src/actions/types.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BA_Frontend/src/components/CreateLesson.js" beforeDir="false" afterPath="$PROJECT_DIR$/BA_Frontend/src/components/CreateLesson.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BA_Frontend/src/components/FileUploadTestComponent.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BA_Frontend/src/components/FooterComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/BA_Frontend/src/components/FooterComponent.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/BA_Frontend/src/components/HeaderComponent.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/BA_Frontend/src/components/HeaderComponent.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BA_Frontend/src/components/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/BA_Frontend/src/components/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BA_Frontend/src/components/LessonTableRow.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BA_Frontend/src/components/ManagePersonalData.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/BA_Frontend/src/components/ManagePersonalData.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BA_Frontend/src/components/PersonalArea.js" beforeDir="false" afterPath="$PROJECT_DIR$/BA_Frontend/src/components/PersonalArea.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BA_Frontend/src/components/PhaseComponent.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BA_Frontend/src/components/Register.js" beforeDir="false" afterPath="$PROJECT_DIR$/BA_Frontend/src/components/Register.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BA_Frontend/src/components/ShowLesson.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/BA_Frontend/src/components/ShowLesson.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BA_Frontend/src/components/ShowLessons.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/BA_Frontend/src/components/ShowLessons.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/BA_Frontend/src/components/ShowLessonsNew.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/BA_Frontend/src/components/UpdateLesson.js" beforeDir="false" afterPath="$PROJECT_DIR$/BA_Frontend/src/components/UpdateLesson.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +83,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.TeacherPlatformApplication">
+  <component name="RunManager" selected="npm.start">
     <configuration name="LessonControllerTest.testDeleteLesson" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Bachelorarbeit" />
       <extension name="coverage">
@@ -215,7 +198,7 @@
       <workItem from="1683121412168" duration="5197000" />
       <workItem from="1683395605051" duration="1410000" />
       <workItem from="1683460778730" duration="4896000" />
-      <workItem from="1683971374929" duration="1915000" />
+      <workItem from="1683971374929" duration="2289000" />
     </task>
     <task id="LOCAL-00001" summary="push project with correct structure to gitlab">
       <created>1678804344000</created>
@@ -315,7 +298,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683461405023</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="removed unnecessary comments">
+      <created>1683973323256</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1683973323256</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -349,7 +339,8 @@
     <MESSAGE value="docker runs" />
     <MESSAGE value="docker and readme for starting with docker" />
     <MESSAGE value="feat: delete user and lessons created by user" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: delete user and lessons created by user" />
+    <MESSAGE value="removed unnecessary comments" />
+    <option name="LAST_COMMIT_MESSAGE" value="removed unnecessary comments" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

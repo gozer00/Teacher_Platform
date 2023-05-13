@@ -11,7 +11,6 @@ import ShowLessons from "./components/ShowLessons";
 import ManageLessons from "./components/ManageLessons";
 import UpdateLesson from "./components/UpdateLesson";
 import ShowLesson from "./components/ShowLesson";
-import FileUploadTestComponent from "./components/FileUploadTestComponent";
 import ManagePersonalData from "./components/ManagePersonalData";
 
 function App() {
@@ -31,7 +30,6 @@ function App() {
                     <Route path="/manage-lessons" element={<ManageLessons/>} />
                     <Route path="/update-lesson" element={<UpdateLesson/>} />
                     <Route path="/show-lesson" element={<ShowLesson/>} />
-                    <Route path="/test-upload" element={<FileUploadTestComponent/>}/>
                     <Route path="/manage-personal-data" element={<ManagePersonalData/>}/>
                 </Routes>
             </div>

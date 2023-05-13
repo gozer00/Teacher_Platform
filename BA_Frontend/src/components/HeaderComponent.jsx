@@ -43,14 +43,6 @@ const HeaderComponent = () => {
         navigate("/home")
     }, [dispatch]);
 
-    useEffect(() => {
-        if (currentUser) {
-            setShowAdminBoard(currentUser.roles.includes("ROLE_ADMIN"));
-        } else {
-            setShowAdminBoard(false);
-        }
-    }, [currentUser]);
-
     return (
         <div>
             <nav className="navbar navbar-expand navbar-dark bg-dark">
